@@ -47,7 +47,14 @@
       <section id="log" class="container">
         <h2>Battle Log</h2>
         <ul>
-          <li v-for="message in log">{{message.actor}} {{message.action}} {{message.result}}</li>
+          <li v-for="message in log">
+          
+          <span :class="{'log--player': message.actor === 'The Knight', 'log--monster': message.actor === 'The Monster'}">{{message.actor}}</span>
+          <span>{{message.action}}</span>
+          <span v-if="message.result[0] !== 'a' " class='log--heal'>{{message.result}}</span>
+          <span v-else class='log--damage'>{{message.result}}</span>
+          
+          </li>
         </ul>
       </section>
     </div>

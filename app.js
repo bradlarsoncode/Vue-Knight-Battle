@@ -55,7 +55,7 @@ const app = Vue.createApp({
       this.monsterHealth -= hitPoints;
       this.logMessage(
         "The Knight",
-        "attacked the Monster",
+        " attacked the Monster ",
         "and did " + hitPoints + " damage"
       );
       this.delayedMonster();
@@ -65,7 +65,7 @@ const app = Vue.createApp({
       this.userHealth -= hit;
       this.logMessage(
         "The Monster",
-        "retaliated",
+        " retaliated ",
         "and did " + hit + " damage"
       );
     },
@@ -78,7 +78,7 @@ const app = Vue.createApp({
       this.monsterHealth -= hitPoints;
       this.logMessage(
         "The Knight",
-        "used a special attack against the Monster",
+        " used a special attack against the Monster ",
         "and did " + hitPoints + " damage"
       );
       this.delayedMonster();
@@ -86,7 +86,7 @@ const app = Vue.createApp({
     heal() {
       const healed = getRandomValue(3, 10);
       this.userHealth += healed;
-      this.logMessage("The Knight", "healed ", healed + " points");
+      this.logMessage("The Knight", " healed ", healed + " points");
       this.currentRound++;
     },
     surrender() {
@@ -105,7 +105,6 @@ const app = Vue.createApp({
         action: what,
         result: value,
       });
-      console.log(this.log);
     },
   },
 });
